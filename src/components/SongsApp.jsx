@@ -80,7 +80,8 @@ export default function SongsApp({
     <div className="songs-app">
       <header style={{ maxWidth: 900, margin: "0 auto 1rem" }}>
         <img
-          src="http://www.vox-records.com/ZKARAOKE/ZETGLDESPA_archivos/image002.png"
+          src="/z-karaoke-logo.png"
+          className="logo"
           alt="logo"
         />
         {/* 🔥 Botón del carrito con contador persistente */}
