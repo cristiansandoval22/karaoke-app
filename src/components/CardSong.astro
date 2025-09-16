@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  artists: any[];
+  genre: string;
+  language: string;
+}
+
+const { title, artists, genre, language } = Astro.props;
+
+let dataLanguage = "";
+if(language === "Español") {
+  dataLanguage = "es"
+} else {
+  dataLanguage = "en"
+}
+
+---
+
+<article 
+  class="card" 
+  data-genre={genre.toLowerCase()} 
+  data-title={title.toLowerCase()}
+  data-language={dataLanguage}
+>
+  <h2 class="card-title">{title}</h2>
+  <p class="card-artists">{artists.map((a: any) => a.name).join(", ")}</p>
+  <div class="card-footer">
+    <p class="card-genre">{genre}</p>
+    <button>
+      <span class="ci--list-add"></span>
+      Agregar
+    </button>
+  </div>
+</article>
+
+<style>
+  
+</style>

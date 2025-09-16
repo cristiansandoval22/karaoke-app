@@ -1,0 +1,13 @@
+---
+import { getSongs, getGenres, getLanguages, getArtists } from "../sanity/lib/queries";
+import SongsApp from "../components/SongsApp.jsx";
+
+const songs = await getSongs();
+const genres = await getGenres();
+const languages = await getLanguages();
+const artists = await getArtists();
+---
+
+<!-- Pasa los arrays como props al componente React que se hidratará en cliente -->
+ 
+<SongsApp client:load initialSongs={songs} genres={genres} languages={languages} artists={artists} />
